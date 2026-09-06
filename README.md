@@ -2,7 +2,7 @@
 
 A free, no-install calculator for Dota 2's **Candy Shop** event. Set what you're trying to buy, punch in your candy stock and this week's trade recipes, and it works out the cheapest way to get there — no signup, no ads, runs entirely in your browser.
 
-**[Open the calculator](#)** *(replace with your GitHub Pages link once enabled — see below)*
+**[Open the calculator](https://vladneko.github.io/Candyworks-Optimizer/)**
 
 ## Why this one
 
