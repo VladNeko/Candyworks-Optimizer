@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candyworks Optimizer — Dota 2 Candy Shop calculator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="site-header">
+  <div class="site-header-row">
+    <div>
+      <h1>Candyworks Optimizer</h1>
+      <div class="subtitle" data-i18n="subtitle">Finds the cheapest candy trade route for the Dota 2 Candy Shop event.</div>
+    </div>
+    <div class="lang-switch">
+      <label for="langSelect" data-i18n="lang_label" class="lang-switch-label">Language</label>
+      <select id="langSelect">
+        <option value="en">EN</option>
+        <option value="ru">RU</option>
+        <option value="uk">UA</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="main-layout">
+
+  <div class="panel">
+
+    <div class="panel-title">
+      <span data-i18n="target_title">Purchase target</span>
+      <button class="btn-secondary" id="clearTargetBtn" data-i18n="clear">Clear</button>
+    </div>
+    <div class="compact-controls" id="targetControls"></div>
+    <div class="target-display" id="targetDisplay"></div>
+
+    <div class="actions-row">
+      <button class="btn-action" id="calcBtn" style="flex:1;" data-i18n="find_path_btn">Find path to purchase</button>
+    </div>
+
+    <div class="actions-row">
+      <button class="btn-mode" id="maxVolumeBtn" data-i18n="max_volume_btn">Max volume</button>
+      <button class="btn-mode" id="balanceBtn" data-i18n="balance_btn">Perfect balance</button>
+    </div>
+
+    <div class="panel-title" style="margin-top:6px;">
+      <span data-i18n="result_title">Result</span>
+      <span class="count"><span id="stepsCount">0</span> <span data-i18n="steps_unit">step(s)</span></span>
+    </div>
+
+    <div class="results-grid">
+      <div class="ledger-col">
+        <div class="ledger-col-title" data-i18n="steps_col_title">Trade steps</div>
+        <div id="stepsList"></div>
+      </div>
+
+      <div class="ledger-col">
+        <div class="ledger-col-title" data-i18n="oracle_col_title">Oracle — is it worth waiting?</div>
+        <div class="ledger-col-hint" id="oracleHint" data-i18n="oracle_hint_default">Shows which possible candies from the daily forecast would make the trade cheaper.</div>
+        <div id="oracleList"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="panel">
+
+    <div class="panel-title">
+      <span><span data-i18n="inventory_title">Your candies</span> <span class="count"><span id="invCount">0</span> / 30</span></span>
+      <button class="btn-secondary" id="clearInvBtn" data-i18n="clear_stock">Clear stock</button>
+    </div>
+    <div class="compact-controls" id="invControls"></div>
+    <div class="inv-grid" id="invGrid"></div>
+
+    <div class="panel-title" style="margin-top:6px;">
+      <span data-i18n="recipes_title">Weekly recipes</span>
+      <button class="btn-secondary" id="clearRecipesBtn" data-i18n="reset_recipes">Reset recipes</button>
+    </div>
+    <div class="recipes-list" id="recipesList"></div>
+
+  </div>
+
+</div>
+
+<script src="solver.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
